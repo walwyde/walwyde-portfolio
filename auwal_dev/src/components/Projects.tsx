@@ -11,31 +11,30 @@ interface Project {
 export default function Projects() {
   const projects: Project[] = [
     {
-      title: 'E-commerce Platform',
-      description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
+      title: 'Give-Aid Nigeria',
+      description: 'An online platform that facilitates sourcing for funds for noble causes.',
       technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Stripe'],
       githubUrl: 'https://github.com/yourusername/ecommerce-platform',
-      liveUrl: 'https://ecommerce-platform-demo.com'
+      liveUrl: 'https://giveaid.ng'
     },
     {
-      title: 'Task Management App',
-      description: 'A responsive task management application with real-time updates and team collaboration features.',
-      technologies: ['React', 'Firebase', 'Tailwind CSS'],
-      githubUrl: 'https://github.com/yourusername/task-management-app',
-      liveUrl: 'https://task-app-demo.com'
+      title: 'Olive Branch Web App',
+      description: 'A WebApp For Patients With High Blood Pressure And Diabetes. With Appointment Booking and Instant Messaging fearures',
+      technologies: ['React', 'Firebase', 'Bootstrap', "Redux", "Mongo Db", "Socket.io"],
+      githubUrl: 'https://github.com/walwyde/olivebrachclient',
+      liveUrl: 'https://olivebrachclient.vercel.app/'
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A weather dashboard that displays current weather conditions and forecasts for multiple locations.',
-      technologies: ['JavaScript', 'OpenWeatherMap API', 'Chart.js'],
-      githubUrl: 'https://github.com/yourusername/weather-dashboard'
+      title: 'Social Media App',
+      description: 'Full Stack Social Media App with Redux State Management',
+      technologies: ['JavaScript', 'React', 'Mongo Db', "Redux", "BootStrap"],
+      githubUrl: 'https://github.com/walwyde/social_media_node_react_redux'
     },
     {
-      title: 'Mobile Fitness Tracker',
-      description: 'A cross-platform mobile app for tracking workouts, nutrition, and health goals.',
-      technologies: ['React Native', 'Expo', 'Redux', 'Firebase'],
-      githubUrl: 'https://github.com/yourusername/fitness-tracker-app',
-      liveUrl: 'https://play.google.com/store/apps/details?id=com.yourusername.fitnesstracker'
+      title: 'Stitch Hub',
+      description: 'A cross-platform mobile app for providing Fashion and lifestyle services.',
+      technologies: ['React Native', 'Expo', 'Redux', 'Mongo Db'],
+      githubUrl: 'https://github.com/walwyde/stitch-hub',
     },
   ]
 

@@ -11,13 +11,13 @@ export default function Hero() {
             Passionate about creating robust and scalable web and mobile applications. Experienced in both frontend and backend technologies. Alumni of the Federal University of Jos, Nigeria.
           </p>
           <div className="flex justify-center space-x-4">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+            <a href="https://github.com/walwyde" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <GitHub size={24} />
             </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+            <a href="https://www.linkedin.com/in/yobe-auwal-365a54209/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:your.email@example.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
+            <a href="mailto:walwyde@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
               <Mail size={24} />
             </a>
           </div>
