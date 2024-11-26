@@ -40,10 +40,12 @@ export default function Contact() {
         setSubmitMessage('Thank you for your message. I\'ll get back to you soon!')
         setFormData({ name: '', email: '', message: '' })
       } else {
-        setSubmitMessage('Oops! There was a problem submitting your form. Please try again.')
+        const errorData = await response.json()
+        setSubmitMessage(`Oops! ${errorData.error || 'There was a problem submitting your form'}. Please try again.`)
       }
     } catch (error) {
-      setSubmitMessage('Oops! There was a problem submitting your form. Please try again.')
+      console.error('Form submission error:', error)
+      setSubmitMessage('Oops! There was a network problem submitting your form. Please try again.')
     }
 
     setIsSubmitting(false)
