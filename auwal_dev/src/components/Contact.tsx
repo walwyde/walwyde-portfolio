@@ -1,3 +1,5 @@
+'use client'
+
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -9,6 +11,8 @@ export default function Contact() {
     email: '',
     message: ''
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState('')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -18,12 +22,31 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitMessage('')
+
+    try {
+      const response = await fetch('https://formspree.io/f/mzzbjzrw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setSubmitMessage('Thank you for your message. I\'ll get back to you soon!')
+        setFormData({ name: '', email: '', message: '' })
+      } else {
+        setSubmitMessage('Oops! There was a problem submitting your form. Please try again.')
+      }
+    } catch (error) {
+      setSubmitMessage('Oops! There was a problem submitting your form. Please try again.')
+    }
+
+    setIsSubmitting(false)
   }
 
   return (
@@ -64,7 +87,14 @@ export default function Contact() {
               rows={4}
             />
           </div>
-          <Button type="submit" className="w-full">Send Message</Button>
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Send Message'}
+          </Button>
+          {submitMessage && (
+            <p className={`mt-4 text-center ${submitMessage.includes('Oops') ? 'text-red-500' : 'text-green-500'}`}>
+              {submitMessage}
+            </p>
+          )}
         </form>
       </div>
     </section>
