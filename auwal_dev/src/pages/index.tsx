@@ -20,7 +20,7 @@ type RepoDetails = {
   lastUpdated: string;
 };
 
-export const Portfolio: React.FC<{repos: RepoDetails[]}> = ({repos}: {repos : RepoDetails[]}) => {
+const Portfolio: React.FC<{repos: RepoDetails[]}> = ({repos}: {repos : RepoDetails[]}) => {
 
   console.log(repos)
   const [activeSection, setActiveSection] = useState('home')
@@ -42,6 +42,9 @@ export const Portfolio: React.FC<{repos: RepoDetails[]}> = ({repos}: {repos : Re
     </div>
   )
 }
+
+
+export default Portfolio;
 
 
 export async function getServerSideProps() {
