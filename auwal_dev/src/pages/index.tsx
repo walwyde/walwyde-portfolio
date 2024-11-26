@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import Skills from '../components/Skills'
@@ -10,7 +10,17 @@ import Footer from '../components/Footer'
 
 import fetchGitHubRepos from '@/methods/fetchRepos'
 
-export default function Portfolio({repos}) {
+
+type RepoDetails = {
+  name: string;
+  description: string;
+  url: string;
+  stars: number;
+  forks: number;
+  lastUpdated: string;
+};
+
+export const Portfolio: React.FC<{repos: RepoDetails[]}> = ({repos}: {repos : RepoDetails[]}) => {
 
   console.log(repos)
   const [activeSection, setActiveSection] = useState('home')
